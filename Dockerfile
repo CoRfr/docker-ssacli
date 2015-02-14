@@ -17,5 +17,5 @@ RUN ( \
         apt-get install -y hpacucli \
     )
 
-ENTRYPOINT hpacucli
-
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
