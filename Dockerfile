@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:jessie
 
 MAINTAINER Bertrand Roussel <bertrand.roussel@cor-net.org>
 
@@ -10,11 +10,11 @@ RUN ( \
     )
 
 RUN ( \
-        wget http://downloads.linux.hp.com/SDR/repo/mcp/GPG-KEY-mcp -O /tmp/proliant.gpg && \
+        wget http://downloads.linux.hpe.com/SDR/downloads/ManagementComponentPack/GPG-KEY-mcp -O /tmp/proliant.gpg && \
         apt-key add /tmp/proliant.gpg && \
-        ( echo "deb http://downloads.linux.hp.com/SDR/repo/mcp/ wheezy/current non-free" > /etc/apt/sources.list.d/proliant.sources.list ) && \
+        ( echo "deb http://downloads.linux.HPE.com/SDR/repo/mcp/ jessie/current non-free" > /etc/apt/sources.list.d/proliant.sources.list ) && \
         apt-get update && \
-        apt-get install -y hpacucli \
+        apt-get install -y hpacucli hpssacli \
     )
 
 COPY ./docker-entrypoint.sh /
