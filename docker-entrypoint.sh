@@ -1,3 +1,2 @@
-#!/bin/bash
-set -e
-ssacli $@
+#!/bin/bash -e
+ssacli "$@"
