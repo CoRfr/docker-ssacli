@@ -7,9 +7,9 @@ To manage and check your HPE RAID controller though docker.
 ## Set up ##
 
 ```
-git clone https://github.com/Paul-Ver/docker-ssacli.git
+git clone https://github.com/CoRfr/docker-ssacli.git
 cd docker-ssacli
-docker build . -t docker-ssacli
+docker build . -t corfr/ssacli
 ```
 
 ## Run ##
@@ -17,7 +17,7 @@ docker build . -t docker-ssacli
 Start a command line interface:
 
 ```
-docker run --rm -ti --privileged --entrypoint ssacli docker-ssacli
+docker run --rm -ti --privileged --entrypoint ssacli corfr/ssacli
 Smart Storage Administrator CLI 3.10.3.0
 Detecting Controllers...Done.
 Type "help" for a list of supported commands.
@@ -29,7 +29,7 @@ Type "exit" to close the console.
 Run a single command:
 
 ```
-docker run --rm -ti --privileged --entrypoint ssacli docker-ssacli ctrl all show config
+docker run --rm -ti --privileged --entrypoint ssacli corfr/ssacli ctrl all show config
 
 Smart Array P400 in Slot 1                (sn: P6162XXXXXXXXX)
 
@@ -46,7 +46,5 @@ Smart Array P400 in Slot 1                (sn: P6162XXXXXXXXX)
 ```
 
 ## Notes ##
-
-Based on:  CoRfr/docker-hpacucli 
 
 Example commands: https://wiki.phoenixlzx.com/page/ssacli/
