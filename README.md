@@ -6,7 +6,7 @@ To manage and check your HPE RAID controller though docker.
 
 ## Set up ##
 
-```
+```bash
 git clone https://github.com/CoRfr/docker-ssacli.git
 cd docker-ssacli
 docker build . -t corfr/ssacli
